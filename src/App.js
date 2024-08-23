@@ -1,23 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
-
+import OtpInput from './_components/otpInput';
 function App() {
+  const handleOtpComplete = (otp) => {
+    console.log('OTP Entered:', otp);
+    // Here you would typically send the OTP to the server for validation
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Enter OTP</h1>
+      <OtpInput length={6} onComplete={handleOtpComplete} />
     </div>
   );
 }
